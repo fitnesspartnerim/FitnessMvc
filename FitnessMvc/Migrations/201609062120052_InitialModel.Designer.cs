@@ -13,7 +13,7 @@ namespace FitnessMvc.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201609062029023_InitialModel"; }
+            get { return "201609062120052_InitialModel"; }
         }
         
         string IMigrationMetadata.Source
