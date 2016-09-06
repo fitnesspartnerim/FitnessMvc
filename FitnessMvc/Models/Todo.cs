@@ -9,8 +9,11 @@ namespace FitnessMvc.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        
         public ApplicationUser User { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
 
         [Required]
         [StringLength(255)]

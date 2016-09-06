@@ -170,12 +170,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TodosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201609062120052_InitialModel.cs" />
     <Compile Include="Migrations\201609062120052_InitialModel.Designer.cs">
       <DependentUpon>201609062120052_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609062250204_AddForeignKeyPropertiesToTodos.cs" />
+    <Compile Include="Migrations\201609062250204_AddForeignKeyPropertiesToTodos.Designer.cs">
+      <DependentUpon>201609062250204_AddForeignKeyPropertiesToTodos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -245,8 +250,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Todos\Create.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -257,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609062120052_InitialModel.resx">
       <DependentUpon>201609062120052_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609062250204_AddForeignKeyPropertiesToTodos.resx">
+      <DependentUpon>201609062250204_AddForeignKeyPropertiesToTodos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

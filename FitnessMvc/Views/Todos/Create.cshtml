@@ -1,0 +1,26 @@
+﻿@model FitnessMvc.Models.Todo
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add a Todo</h2>
+@using (Html.BeginForm("Create", "Todos"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CreateDate)
+        @Html.TextBoxFor(m => m.CreateDate, new { @class = "form-control" })
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsCompleted) Is completed?
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+    
+
+
