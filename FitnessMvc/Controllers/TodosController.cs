@@ -7,7 +7,7 @@ namespace FitnessMvc.Controllers
 {
     public class TodosController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public TodosController()
         {
@@ -28,8 +28,8 @@ namespace FitnessMvc.Controllers
         [HttpPost]
         public ActionResult Create(Todo todo)
         {
-            if (!ModelState.IsValid)
-                return View("Create", todo);
+            //if (!ModelState.IsValid)
+            //    return View("Create", todo);
 
             var newTodo = new Todo
             {
