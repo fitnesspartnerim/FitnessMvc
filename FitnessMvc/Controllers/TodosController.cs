@@ -28,6 +28,9 @@ namespace FitnessMvc.Controllers
         [HttpPost]
         public ActionResult Create(Todo todo)
         {
+            if (!ModelState.IsValid)
+                return View("Create", todo);
+
             var newTodo = new Todo
             {
                 Title = todo.Title,
