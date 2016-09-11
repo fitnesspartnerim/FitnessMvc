@@ -1,6 +1,8 @@
 ﻿using FitnessMvc.Models;
+using FitnessMvc.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace FitnessMvc.Controllers
@@ -17,19 +19,20 @@ namespace FitnessMvc.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            var todo = new Todo();
-
-            todo.CreateDate = DateTime.Now;
-
-            return View(todo);
+           return View();
         }
 
         [Authorize]
         [HttpPost]
-        public ActionResult Create(Todo todo)
+        public ActionResult Create(TodoViewModel todo)
         {
-            //if (!ModelState.IsValid)
-            //    return View("Create", todo);
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+                return View("Create", todo);
+            }
+                
 
             var newTodo = new Todo
             {
